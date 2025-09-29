@@ -1,0 +1,23 @@
+ORG 0000H
+SJMP START
+ORG 0030H
+
+START:
+MOV 30H,#063H       ;A
+MOV 31H,#082H       ;B
+MOV 32H,#0C5H       ;C
+MOV 33H,#036H       ;D
+MOV A,30H
+XRL 31H,A           ;¸²¸ÇB
+MOV A,32H
+CPL A               ;C·´
+ANL A,31H
+CPL A
+MOV 31H,A
+MOV A,30H
+ORL A,33H
+CPL A
+ANL A,31H
+MOV 40H,A
+
+SJMP $
